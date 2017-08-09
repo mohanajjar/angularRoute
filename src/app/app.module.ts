@@ -1,26 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { Routes, RouterModule } from '@angular/router';
-
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { ViewDetailComponent } from './home/view-detail.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { ManageProductComponent } from './manage-product/manage-product.component';
+import { PageNotFoundComponent } from './page-not-found.component';
 
 import { AppComponent } from './app.component';
-import { PersonDetailComponent } from './person-detail/person-detail.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
+    HomeComponent,
     AppComponent,
-    PersonDetailComponent
+    ViewDetailComponent,
+    ManageProductComponent,
+    AddProductComponent,
+    PageNotFoundComponent
+
   ],
   imports: [
+
+    AppRoutingModule,
     BrowserModule,
-    FormsModule, RouterModule,
+    FormsModule,
     ReactiveFormsModule,
-    HttpModule
   ],
-  providers: [],
-  //  directives: [ROUTER_DIRECTIVES],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

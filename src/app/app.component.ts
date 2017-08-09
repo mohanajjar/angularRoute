@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { PersonDetailComponent } from './person-detail/person-detail.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +14,8 @@ export class AppComponent implements OnInit {
   public registerForm;
   public submitted = false;
   public data;
+
+
   ngOnInit() {
     this.registerForm = new FormGroup({
       first_name: new FormControl(),

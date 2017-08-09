@@ -1,0 +1,19 @@
+<h2>Add product</h2>
+<div>
+ <div>
+    <label>Name: </label>
+    <input [(ngModel)]="product.name" />
+ </div>	
+ <div>
+    <label>Price: </label>
+    <input [(ngModel)]="product.price" />
+ </div>	
+ <div>
+    <label>Short Description: </label>
+    <input [(ngModel)]="product.description" />
+ </div>	 
+ <div>
+    <button (click)="addProduct()">Add</button>
+ </div>
+</div> 
+

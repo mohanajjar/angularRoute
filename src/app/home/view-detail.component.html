@@ -1,0 +1,14 @@
+<h2>View Detail</h2>
+<ul [ngClass]="'view-detail'">
+	<li>Id: {{product.id}}</li>
+	<li>Name: {{product.name}}</li>
+	<li>Price: {{product.price}}</li>
+	<li>Description: {{product.description}}</li>
+</ul>
+<div>
+	<button (click)="goBack()">Go Back</button>
+	<button (click)="updateProduct(product.id)">Update</button>
+</div>
+<div>
+	<a [routerLink]="['/buy-product']">Buy product</a>
+</div>

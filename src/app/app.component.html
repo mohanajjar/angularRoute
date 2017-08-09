@@ -52,11 +52,13 @@
 		</div>
 	</div>
 
-<!-- 	<nav> -->
-<!-- 		<a [routerLink]="['Products']">Products</a> <a -->
-<!-- 			[routerLink]="['AboutUs']">About Us</a> <a [routerLink]="['Contact']">Contact</a> -->
-<!-- 	</nav> -->
-<!-- 	<main> <router-outlet></router-outlet> </main> -->
+	<nav [ngClass]="'menu'">
+		<a routerLink="/home" routerLinkActive="active-link">Home</a> | <a
+			routerLink="/add-product" routerLinkActive="active-link">Add
+			Product</a> | <a routerLink="/manage-product"
+			routerLinkActive="active-link">Manage Product</a>
+	</nav>
+	<main> <router-outlet></router-outlet> </main>
 </div>
 <hr>
 
