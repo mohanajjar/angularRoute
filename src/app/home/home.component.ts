@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Product } from '../services/product';
-import { ProductService } from '../services/product.service';
+import {Product} from '../services/product';
+import {ProductService} from '../services/product.service';
 
 @Component({
   selector: 'home-app',
@@ -9,12 +9,12 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  books: Product[];
-  constructor(private bookService: ProductService) { }
-  getBooks(): void {
-    this.bookService.getProducts().then(books => this.books = books);
+  products: Product[];
+  constructor(private productService: ProductService) {}
+  getProducts(): void {
+    this.productService.getProducts().then(products => this.products = products);
   }
   ngOnInit(): void {
-    this.getBooks();
+    this.getProducts();
   }
 }

@@ -1,7 +1,35 @@
 <h2>Book Details</h2>
 <ul [ngClass] = "'home'">
-  <li *ngFor="let book of books" >
-    Id: {{book.id}}, Name: {{book.name}} | 
-	<a [routerLink]="['/view-detail', book.id]">View Detail</a>
+  <li *ngFor="let product of products" >
+    Id: {{product.id}}, Name: {{product.name}} | 
+	<a [routerLink]="['/view-detail', product.id]">View Detail</a>
   </li>
 </ul>
+
+<collapsible-table [type]="'accordion'" bordered>
+
+	<thead>
+		<collapsible-table-row>
+		<th>ID</th>
+		<th>Libelle</th>
+		<th>Action</th>
+		</collapsible-table-row>
+	</thead>
+
+	<tbody *ngFor="let product of products">
+		<collapsible-table-row [detail]="detail1">
+		<td>{{product.id}}</td>
+		<td>{{product.name}}</td>
+        <td><a [routerLink]="['/view-detail', product.id]">View Detail</a></td>
+		</collapsible-table-row>
+		<collapsible-table-row-detail #detail1>
+		<table>
+			<tr>
+				<td width="75%">Row #1 Detail #1</td>
+				<td>Row #1 Detail #2</td>
+			</tr>
+		</table>
+		</collapsible-table-row-detail>
+	</tbody>
+
+	</collapsible-table>

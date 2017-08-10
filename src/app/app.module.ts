@@ -8,6 +8,11 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ManageProductComponent } from './manage-product/manage-product.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // <-- import required BrowserAnimationsModule
+// Import your library
+import { CollapsibleModule } from 'angular2-collapsible'; // <-- import the module
+
+
 import { AppComponent } from './app.component';
 import { ProductService } from './services/product.service';
 
@@ -22,7 +27,8 @@ import { ProductService } from './services/product.service';
 
   ],
   imports: [
-
+    CollapsibleModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     BrowserModule,
     FormsModule,
